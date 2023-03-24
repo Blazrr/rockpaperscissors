@@ -43,13 +43,14 @@ export const counterSlice = createSlice({
       if (result == "WIN") {
         state.score += 1;
       }
-
     },
-    
+    playAgain: (state) => {
+        state.playing = false
+    }   
   },
 });
 
-export const { elementChosen } = counterSlice.actions;
+export const { elementChosen, playAgain } = counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 

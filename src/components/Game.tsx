@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import Element from "./Element";
 import {motion} from "framer-motion"
+import GamePlayed from "./GamePlayed";
 
 type Props = {};
 
@@ -14,25 +15,7 @@ const Game = (props: Props) => {
   return (
     <div className="mt-16">
       {game.playing ? (
-        <div className="flex space-x-8 items-center justify-center">
-            <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
-            transition={{ease:"easeIn", duration:.6}}
-
-            >
-          <Element element={game.element} />
-            </motion.div>
-            <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
-            transition={{ease:"easeIn", duration:.8, delay:2}}
-            >
-          <Element element={game.randomElement} />
-            </motion.div>
-        </div>
+       <GamePlayed/>
       ) : (
         <Choices />
       )}
