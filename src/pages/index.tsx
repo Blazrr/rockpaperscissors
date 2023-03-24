@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Rules from '@/components/Rules'
 import Counter from '@/components/Counter'
 import Element from '@/components/Element'
+import Game from '@/components/Game'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Counter/>
-      <Element/>
+      <Game/>
       <Rules/>
     </>
   )
