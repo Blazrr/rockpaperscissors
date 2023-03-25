@@ -10,6 +10,7 @@ interface CounterState {
   score: number;
   element: "rock" | "paper" | "scissors";
   randomElement: "rock" | "paper" | "scissors";
+  lastResult: "WIN" | "DRAW" | "LOSE"
 }
 
 // Define the initial state using that type
@@ -19,6 +20,7 @@ const initialState: CounterState = {
   score: 0,
   element: "rock",
   randomElement: "rock",
+  lastResult:"DRAW"
 };
 
 export const counterSlice = createSlice({
@@ -40,9 +42,8 @@ export const counterSlice = createSlice({
       state.element = action.payload;
       state.playing = true;
       const result = game(action.payload, randomPcElement);
-      if (result == "WIN") {
-        state.score += 1;
-      }
+      state.lastResult = result,
+      result == "WIN" ? state.score += 1 :null
     },
     playAgain: (state) => {
         state.playing = false
