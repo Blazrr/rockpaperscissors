@@ -13,7 +13,7 @@ const Game = (props: Props) => {
   const game = useSelector((state: RootState) => state.game);
 
   return (
-    <div className="mt-16">
+    <div className="pt-16">
       {game.playing ? (
        <GamePlayed/>
       ) : (

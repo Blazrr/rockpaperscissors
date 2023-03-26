@@ -17,7 +17,7 @@ const Counter = (props: Props) => {
   }, [game.score]);
 
   return (
-    <div className='flex items-center justify-center mt-8'>
+    <div className='flex items-center justify-center pt-8'>
 
         <div className='border-4 border-slate-300 p-3 rounded-xl flex items-center justify-between min-w-[300px]'>
     
